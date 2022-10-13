@@ -1,16 +1,21 @@
 package utils.crud;
 
 import entities.Company;
+import jakarta.persistence.EntityManager;
 import queries.CompanyQuery;
 
 import java.util.List;
 
 public class CompanyCrud {
 
-    CompanyQuery companyQuery = new CompanyQuery();
+    CompanyQuery companyQuery;
     List<Company> companyList;
     Company company;
 
+    public CompanyCrud(EntityManager manager)
+    {
+        companyQuery = new CompanyQuery(manager);
+    }
     //Execute queries and print the results
 
     public void getAllCompanies(){

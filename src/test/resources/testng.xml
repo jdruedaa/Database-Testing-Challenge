@@ -3,8 +3,8 @@
 <suite name="DB testing">
     <test name="DB Tests">
         <classes>
-            <class name="EmployeeTest"/>
-            <class name="TestCompany"/>
+            <class name="tests.EmployeeTests"/>
+            <class name="tests.CompanyTests"/>
         </classes>
     </test>
 </suite>

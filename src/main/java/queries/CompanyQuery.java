@@ -16,9 +16,9 @@ public class CompanyQuery {
     private EntityTransaction transaction;
 
 
-    public CompanyQuery(){
+    public CompanyQuery(EntityManager manager){
         //Create new entity manager and transaction
-        manager = jpaManager.getManager();
+        this.manager = manager;
         transaction = manager.getTransaction();
     }
 

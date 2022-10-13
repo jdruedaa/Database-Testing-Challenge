@@ -1,3 +1,5 @@
+package tests;
+
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import utils.crud.EmployeeCrud;
@@ -5,9 +7,9 @@ import utils.parsers.DateParser;
 
 import java.sql.Date;
 
-public class EmployeeTest {
+public class EmployeeTests extends BaseTest{
 
-    EmployeeCrud employeeCrud = new EmployeeCrud();
+    EmployeeCrud employeeCrud = new EmployeeCrud(manager);
     DateParser dateParser = new DateParser();
 
     @Test

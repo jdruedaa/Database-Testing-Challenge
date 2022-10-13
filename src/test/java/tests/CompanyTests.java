@@ -1,9 +1,11 @@
+package tests;
+
 import org.testng.annotations.Test;
 import utils.crud.CompanyCrud;
 
-public class TestCompany {
+public class CompanyTests extends BaseTest {
 
-    CompanyCrud companyCrud = new CompanyCrud();
+    CompanyCrud companyCrud = new CompanyCrud(manager);
 
     @Test
     public void getAllCompanies(){

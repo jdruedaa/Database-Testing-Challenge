@@ -16,11 +16,9 @@ public class EmployeeQuery {
     private List<Employee> listEmployee;
     private final EntityTransaction transaction;
 
-
-    public EmployeeQuery(){
+    public EmployeeQuery(EntityManager manager){
         //Create new entity manager and transaction
-        JpaManager jpaManager = new JpaManager();
-        manager = jpaManager.getManager();
+        this.manager = manager;
         transaction = manager.getTransaction();
     }
 

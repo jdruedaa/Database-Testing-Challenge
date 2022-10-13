@@ -1,6 +1,7 @@
 package utils.crud;
 
 import entities.Employee;
+import jakarta.persistence.EntityManager;
 import queries.EmployeeQuery;
 
 import java.sql.Date;
@@ -8,9 +9,14 @@ import java.util.List;
 
 public class EmployeeCrud {
 
-    EmployeeQuery employeeQuery = new EmployeeQuery();
+    EmployeeQuery employeeQuery;
     List<Employee> employeeList;
     Employee employee;
+
+    public EmployeeCrud(EntityManager manager)
+    {
+        employeeQuery = new EmployeeQuery(manager);
+    }
 
     //Execute queries and print the results
 
