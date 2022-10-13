@@ -1,3 +1,4 @@
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 import utils.crud.EmployeeCrud;
 import utils.parsers.DateParser;
@@ -61,6 +62,26 @@ public class EmployeeTest {
 
     @Test
     public void deleteEmployee(){
+        int id = 7;
+        String firstName = "Danny";
+        String lastName = "Ocean";
+        double salary = 1500;
+        String email = "dOcean@gmail.com";
+        String address = "Cll 3 #4-78";
+        Date birthDate = dateParser.parseDate("1983-4-4");
+        int idCompany = 1;
+        String phoneNumber = "12398737";
+
+        employeeCrud.insertNewEmployee(id,firstName,lastName,salary,email,address,birthDate,phoneNumber,idCompany);
+        employeeCrud.getEmployeeById(id);
+        employeeCrud.getEmployeeById(id);
+        employeeCrud.deleteEmployee(id);
+        employeeCrud.getEmployeeById(id);
+    }
+
+    @AfterSuite
+    public void deleteCreatedEmployees()
+    {
         int id = 6;
         employeeCrud.getEmployeeById(id);
         employeeCrud.deleteEmployee(id);
